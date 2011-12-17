@@ -16,7 +16,8 @@ Two years ago, I transitioned from using regular Gmail (i.e. "...@gmail.com")
 to setting up Google Apps for "nynim.org" (i.e. "...@nynim.org"). I had found
 the following article back then which gave me helpful hints on how to use
 imapsync to push data to my new Google Apps e-mail address:
-[http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/](http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/)
+
+**[http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/](http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/)**
 
 <!-- more -->
 
@@ -37,14 +38,15 @@ Here is the final script I ended-up with:
    --regexmess 's/Delivered-To: source\@gmail.com/Delivered-To: target\@yourdomain.com/g'
 {% endcodeblock %}
 
-The "<tt>--syncinternaldates</tt>", "<tt>--useheader 'Message-Id'</tt>",
-and "<tt>--skipsize</tt>" options are all recommended by the imapsync FAQ
+The `--syncinternaldates`, `--useheader 'Message-Id'`,
+and `--skipsize` options are all recommended by the imapsync FAQ
 (search for "Gmail"):
-[http://www.linux-france.org/prj/imapsync/FAQ](http://www.linux-france.org/prj/imapsync/FAQ)
 
-I opted to use the "<tt>--passfile1/passfile2</tt>" options rather than passing in a
+**[http://www.linux-france.org/prj/imapsync/FAQ](http://www.linux-france.org/prj/imapsync/FAQ)**
+
+I opted to use the `--passfile1/passfile2` options rather than passing in a
 plain-text password in via a command-line param for two reasons: first because
-anyone with access to your system can use "<tt>ps</tt>" to view active processes and
+anyone with access to your system can use `ps` to view active processes and
 hence would see your password plain-as-day; second because it just better
 abstracts the script-logic from the password-text, and we can control the
 file-permissions of those password files.

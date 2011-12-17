@@ -44,8 +44,8 @@ go back in time and recover old-states of files.
 is similar to RAID-5/RAID-6 except without the potentially-fatal
 "_RAID-5 write hole_" problem, in part thanks to the copy-on-write strategy.
 * You can [replicate ZFS filesystems](http://dlc.sun.com/osol/docs/content/ZFSADMIN/gbchx.html)
-("<tt>zfs send</tt>" and "<tt>zfs receive</tt>"), snapshots and all, making
-it dead-easy to backup ZFS filesystems to remote machines.
+(`zfs send` and `zfs receive`), snapshots and all, making it dead-easy to
+backup ZFS filesystems to remote machines.
 
 Very, very cool stuff! The more I read about it, the more I wanted it for my
 next-generation file-server solution. In particular, I really love the idea of
