@@ -35,7 +35,7 @@ using previously to
 Here's the script:
 
 {% codeblock lang:sh %}
- # Sync e-mail from _username@yourdomain.com_ to localhost, using IMAP
+ # Sync e-mail from "username@yourdomain.com" to localhost, using IMAP
  imapsync --host1 imap.gmail.com --user1 username@yourdomain.com
           --passfile1 /path/to/gmail_mirror.passfile1 \
           --host2 localhost --user2 username

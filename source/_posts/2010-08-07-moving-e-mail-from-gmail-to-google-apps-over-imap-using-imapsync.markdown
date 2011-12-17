@@ -15,10 +15,12 @@ tags:
 Two years ago, I transitioned from using regular Gmail (i.e. "...@gmail.com")
 to setting up Google Apps for "nynim.org" (i.e. "...@nynim.org"). I had found
 the following article back then which gave me helpful hints on how to use
-imapsync to push data to my new Google Apps e-mail address:
+`imapsync` to push data to my new Google Apps e-mail address:
 
 **[http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/](http://gemal.dk/blog/2008/04/08/completed_the_gmail_migration/)**
 
+I adapted that script for my own needs, and I was able to successfully copy
+all the mail from my regular Gmail account to my new Google Apps account.
 <!-- more -->
 
 Here is the final script I ended-up with:
