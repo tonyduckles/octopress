@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2011-03-05 18:56:01'
 layout: post
-slug: zfs-the-last-word-in-filesystems
-status: publish
 title: 'ZFS: The Last Word in Filesystems'
-wordpress_id: '14141'
+date: '2011-03-05 18:56:01'
+comments: true
 categories:
 - Blog
 tags:

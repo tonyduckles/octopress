@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2006-11-27 22:43:12'
 layout: post
-slug: street-fighter-the-later-years
-status: publish
 title: 'Street Fighter: The Later Years'
-wordpress_id: '253'
+date: '2006-11-27 22:43:12'
+comments: true
 categories:
 - Quick Notes
 tags:

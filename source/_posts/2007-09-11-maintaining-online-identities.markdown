@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2007-09-11 20:47:44'
 layout: post
-slug: maintaining-online-identities
-status: publish
 title: Maintaining Online Identities
-wordpress_id: '263'
+date: '2007-09-11 20:47:44'
+comments: true
 categories:
 - Blog
 tags:

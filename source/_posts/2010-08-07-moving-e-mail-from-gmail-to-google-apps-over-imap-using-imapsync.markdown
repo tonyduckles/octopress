@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2010-08-07 23:31:49'
 layout: post
-slug: moving-e-mail-from-gmail-to-google-apps-over-imap-using-imapsync
-status: publish
 title: Moving E-Mail from Gmail to Google Apps over IMAP using imapsync
-wordpress_id: '419'
+date: '2010-08-07 23:31:49'
+comments: true
 categories:
 - Blog
 tags:

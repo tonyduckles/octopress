@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2006-03-21 22:08:58'
 layout: post
-slug: reblog-web-based-server-side-rss-aggregator
-status: publish
 title: reBlog - Web-Based, Server-Side RSS Aggregator
-wordpress_id: '248'
+date: '2006-03-21 22:08:58'
+comments: true
 categories:
 - Blog
 tags:
@@ -45,7 +42,6 @@ could use it vi-style. ;) So, it's really easy to scroll through posts, mark
 them as read or flag them for follow-up. All the posts you flag (or "Publish"
 in reBlog terminology) go to a different bucket, which can be rendered to a
 RSS feed itself, I guess so you can point some other RSS reader to the list.
-
 
 I'm just very impressed with the project. It's really just what I was looking
 for. The 2.0 version is still in beta, and I'm hoping by the final version

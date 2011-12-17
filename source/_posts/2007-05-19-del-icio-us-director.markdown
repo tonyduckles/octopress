@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2007-05-19 23:23:24'
 layout: post
-slug: del-icio-us-director
-status: publish
 title: del.icio.us director
-wordpress_id: '257'
+date: '2007-05-19 23:23:24'
+comments: true
 categories:
 - Blog
 tags:

@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2006-11-23 22:38:34'
 layout: post
-slug: gravity-by-john-mayer
-status: publish
 title: '"Gravity" by John Mayer'
-wordpress_id: '360'
+date: '2006-11-23 22:38:34'
+comments: true
 categories:
 - Guitar Tabs
 tags:
@@ -16,12 +13,15 @@ tags:
     "Gravity" by John Mayer
     Transcribed by Tony Duckles
     Last Modified: Nov 23, 2006
-    ------  
+    ------
+
     Tuning: Normal
-    http://www.youtube.com/watch?v=-urpryE_Ws0  
-    
-    Verses:  
-    "Gravity is working against me..."  
+    http://www.youtube.com/watch?v=-urpryE_Ws0
+
+    Verses:
+
+    "Gravity is working against me..."
+
        (G)    (C)
     e|----------------|
     b|--3-----(8)-----|
@@ -29,10 +29,12 @@ tags:
     d|---------5-----.|
     a|---------7------|
     e|--3-------------|
-       (T)  
-    
-    Chorus:  
-    "I'll never know what makes this man..."  
+       (T)
+
+    Chorus:
+
+    "I'll never know what makes this man..."
+
       (Am7)   (D7)  (A#6) (D#maj9) (D7)
     e|--5---------------------------------|
     b|--8------7------8------6------7-----|

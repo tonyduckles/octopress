@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2006-07-19 21:17:05'
 layout: post
-slug: firefly-fan-documentary-dvd
-status: publish
 title: Firefly & Fan Documentary DVD
-wordpress_id: '251'
+date: '2006-07-19 21:17:05'
+comments: true
 categories:
 - Blog
 tags:

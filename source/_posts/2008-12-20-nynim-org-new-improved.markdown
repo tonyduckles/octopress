@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2008-12-20 12:04:51'
 layout: post
-slug: nynim-org-new-improved
-status: publish
+date: '2008-12-20 12:04:51'
 title: 'Nynim.org: New & Improved'
-wordpress_id: '265'
+comments: true
 categories:
 - Blog
 tags:

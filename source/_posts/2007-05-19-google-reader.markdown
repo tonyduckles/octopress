@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2007-05-19 21:46:18'
 layout: post
-slug: google-reader
-status: publish
 title: Google Reader
-wordpress_id: '255'
+date: '2007-05-19 21:46:18'
+comments: true
 categories:
 - Blog
 tags:
@@ -29,7 +26,8 @@ needs. Here are the things which really won me over:
 * Super-slick UI, with fantastic keyboard navigation support.
 * Nifty AJAX tricks, like only loading enough items into the ListView to fit
 on screen initially and then fetching more as you scroll down. (_Of course,
-they do this for performance reasons, but it's still implemented very cleanly and just "feels" nice._)
+they do this for performance reasons, but it's still implemented very cleanly
+and just "feels" nice._)
 * You can "star"/flag entries that are useful, and then go back and look at
 all the articles you've flagged. It remembers the timestamp of when you
 flagged the entry, which I find handy. (_Though most useful links I consume

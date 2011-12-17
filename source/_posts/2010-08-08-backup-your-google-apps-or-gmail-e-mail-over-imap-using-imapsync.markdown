@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2010-08-08 00:35:18'
 layout: post
-slug: backup-your-google-apps-or-gmail-e-mail-over-imap-using-imapsync
-status: publish
 title: Backup your Google Apps (or Gmail) e-mail over IMAP using imapsync
-wordpress_id: '1141'
+date: '2010-08-08 00:35:18'
+comments: true
 categories:
 - Blog
 tags:

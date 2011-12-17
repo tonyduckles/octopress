@@ -1,11 +1,8 @@
 ---
-author: tonyduckles
-date: '2007-09-11 20:23:38'
 layout: post
-slug: simple-off-site-backups
-status: publish
 title: Simple Off-Site Backups...?
-wordpress_id: '261'
+date: '2007-09-11 20:23:38'
+comments: true
 categories:
 - Blog
 tags:
@@ -28,7 +25,7 @@ only rsync so often), but the decision to not RAID-mirror the drives was
 intentional: if the filesystem or partition table on the RAID somehow became
 corrupted, all my data could be lost.
 
-But...what if my house burns down? (*gasp* Oh noes!!) Yes, that would be sad
+But...what if my house burns down? (\*gasp\* Oh noes!!) Yes, that would be sad
 indeed! So, rather than just providing a single layer of redundancy locally,
 if I really want to invest in the survival of my important data, I really need
 to spread that data around; I need to diversify.
@@ -40,8 +37,6 @@ like it would be a PITA to do a full restore over my home cable internet pipe.
 Not to mention the monthly fees, paying someone else to store my data safe and
 sound. But, dare I trust my important (and partially sensitive) data to a
 stranger?
-
-  
 
 Currently, I'm tempted by a seemingly simple solution: just get an external
 USB hdd, mirror my data once locally, and then throw it at a friend's house
