@@ -2,6 +2,10 @@
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works.
 // If you need a handy color picker try http://hslpicker.com
 
+// Main Section Colors
+$page-bg: lighten(desaturate(#263347, 22), 14);
+$header-bg: desaturate(#263347, 15);
+
 //$header-bg: #263347;
 //$subtitle-color: lighten($header-bg, 58);
 //$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
