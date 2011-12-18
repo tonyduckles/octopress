@@ -1,6 +1,11 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+// Shrink font-size a bit. The default of 1.15em seemed oversized to me.
+body {
+  font-size: 1.05em;
+}
+
 aside.sidebar {
   #followme {
     img {
