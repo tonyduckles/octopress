@@ -15,4 +15,16 @@ aside.sidebar {
       padding: .12em;
     }
   }
+  .tag-cloud {
+    span {
+      a {
+        padding-right: .4em;
+      }
+    }
+    .rank-1 { font-size: 120%; }
+    .rank-2 { font-size: 110%; }
+    .rank-3 { font-size: 100%; }
+    .rank-4 { font-size: 90%; }
+    .rank-5 { font-size: 80%; }
+  }
 }
