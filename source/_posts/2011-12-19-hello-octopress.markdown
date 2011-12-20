@@ -82,12 +82,13 @@ tweak the CSS (SASS), colors, page/sidebar dimensions, etc. It's all just
 extremely well-thought-out and a joy to use and extend.
 
 ## Ending Thoughts
-This has been a fun pet project for me. It's the first time I've used a Ruby
-environment. It's also the first time I've played with [SASS](http://sass-lang.com/) (`*.scss`),
-and boy is it going to be hard to go back to writing plain-old CSS. Also, I'm
-not sure if its a SASS feature or something in the Liquid framework, but
-being able to do things like `desaturate(lighten($nav-bg, 8), 15)` in a `*.scss`
-file is *awesome*!
+This has been a fun pet project for me.  It's the first time I've used a Ruby environment.
+It's also the first time I've played with [SASS](http://sass-lang.com/) (`*.scss`),
+and boy is it going to be hard to go back to writing plain-old CSS.
+SASS's [color functions](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html)
+are ridiculously slick: being able to do things like `desaturate(lighten($nav-bg, 8), 15)`
+in a `*.scss` file is *awesome* and makes tweaking a site's color-scheme
+oh-so-much easier.
 
 I'm a bit sad to have lost the lifestream ([wp-lifestream](https://github.com/dcramer/wp-lifestream/))
 functionality from my old Wordpress site. But then again I'm already doing
