@@ -1,12 +1,11 @@
 ---
-layout: post
+layout: page
 title: '"Spotlight" by Dave Matthews'
 date: '2002-08-24 22:40:52'
 comments: true
 categories:
 - Guitar Tabs
 ---
-<!-- more -->
 
     "Spotlight" by Dave Matthews
     From the Solo Acoustic Show 09/11/92 - DKE House at Univ of Virginia

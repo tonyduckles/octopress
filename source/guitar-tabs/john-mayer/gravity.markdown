@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: page
 title: '"Gravity" by John Mayer'
 date: '2006-11-23 22:38:34'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- johnmayer
 ---
-<!-- more -->
 
     "Gravity" by John Mayer
     Transcribed by Tony Duckles

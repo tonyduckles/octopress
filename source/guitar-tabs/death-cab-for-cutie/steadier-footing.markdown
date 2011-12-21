@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: page
 title: '"Steadier Footing" by Death Cab for Cutie'
 date: '2007-06-02 22:35:50'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- deathcabforcutie
 ---
-<!-- more -->
 
     "Steadier Footing" by Death Cab for Cutie
     Transcribed by Tony Duckles

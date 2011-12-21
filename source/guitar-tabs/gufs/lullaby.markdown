@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: page
 title: '"Lullaby" by The Gufs'
 date: '1998-08-20 22:43:02'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- gufs
 ---
-<!-- more -->
 
     "Lullaby" by The Gufs
     Transcribed by Tony Duckles

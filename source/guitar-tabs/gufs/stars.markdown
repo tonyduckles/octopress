@@ -1,14 +1,11 @@
 ---
-layout: post
-title: “Stars” by The Gufs
+layout: page
+title: '"Stars" by The Gufs'
 date: '2006-10-29 22:39:48'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- gufs
 ---
-<!-- more -->
 
     "Stars" by The Gufs
     Transcribed by Tony Duckles

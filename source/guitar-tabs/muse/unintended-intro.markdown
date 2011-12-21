@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: page
 date: '2007-12-25 22:30:21'
 title: '"Unintended (Acoustic Intro from Wembley Stadium)" by Muse'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- muse
 ---
-<!-- more -->
 
     "Unintended (Acoustic Intro from Wembley Stadium)" by Muse
     http://www.muse.mu/unintended/flash.htm

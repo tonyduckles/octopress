@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: page
 title: '"Smile" by The Gufs'
 date: '1997-08-09 22:24:21'
 comments: true
 categories:
 - Guitar Tabs
-tags:
-- gufs
 ---
-<!-- more -->
 
     "Smile" by The Gufs
     Transcribed by Tony Duckles
