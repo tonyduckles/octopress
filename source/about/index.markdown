@@ -1,5 +1,4 @@
 ---
-date: '2009-09-05 13:13:48'
 layout: page
 status: publish
 title: About
