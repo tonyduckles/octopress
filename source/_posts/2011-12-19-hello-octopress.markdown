@@ -3,6 +3,8 @@ layout: post
 title: "Hello Octopress!"
 date: 2011-12-19 21:53
 comments: true
+description: "Introduction to Octopress and my migration path from Wordpress to Octopress"
+keywords: "octopress, octopress overview, octopress introduction, octopress wordpress, blog, wordpress, sass, jekkyl, ruby"
 categories:
 - Blog
 tags:

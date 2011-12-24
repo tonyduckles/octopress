@@ -3,6 +3,8 @@ layout: post
 title: 'ZFS: The Last Word in Filesystems'
 date: '2011-03-05 18:56:01'
 comments: true
+description: "Introduction and overview of ZFS and why it's darn cool"
+keywords: "zfs, filesystems, raid, hardware, hard drives, checksums, snapshots"
 categories:
 - Blog
 tags:

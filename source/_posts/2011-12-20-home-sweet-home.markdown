@@ -3,6 +3,8 @@ layout: post
 title: "Home Sweet $HOME"
 date: 2011-12-20 19:35
 comments: true
+description: "Exploring and understanding the dot-files in your $HOME directory, and tracking changes to the dot-files in your $HOME directory via Git."
+keywords: "home directory, dotfiles, home directory dotfiles, home directory git, home directory dotfiles git, dotfiles git, home directory bashrc, bashrc, home directory inputrc, inputrc"
 categories:
 - Blog
 tags:

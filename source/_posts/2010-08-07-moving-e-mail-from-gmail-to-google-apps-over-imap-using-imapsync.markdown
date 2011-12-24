@@ -3,6 +3,8 @@ layout: post
 title: Moving E-Mail from Gmail to Google Apps over IMAP using imapsync
 date: '2010-08-07 23:31:49'
 comments: true
+description: "Moving e-mail from Gmail to Google Apps for your domain over IMAP using imapsync"
+keywords: "google, google apps, imap, imapsync, email"
 categories:
 - Blog
 tags:
