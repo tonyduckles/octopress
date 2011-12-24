@@ -12,7 +12,7 @@ tags:
 - dotfiles
 ---
 
-{% img right /images/2011/12/img_Terminal.png 250 250 %}
+{% img right /images/2011/12/img_Terminal.png 180 180 %}
 About a year and a half ago, I stumbled upon Ryan Tomayko's "[dotfiles](https://github.com/rtomayko/dotfiles)"
 repository on Github. The moment I saw it, I thought it was a *great* idea:
 the idea of managing all your `$HOME` directory "dot-files" in a Git repository.
