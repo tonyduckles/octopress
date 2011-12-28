@@ -1,0 +1,10 @@
+---
+layout: page
+status: publish
+title: Page Not Found
+footer: false
+---
+
+Oops, I couldn't find that page! Sorry about that.
+
+Maybe try the search box (top right), or look through the [archives](/blog/archives/)?
