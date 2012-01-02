@@ -7,7 +7,7 @@ require "stringex"
 #ssh_user       = "tony@corvus"
 ssh_user       = "tduckles@nynim.org"
 ssh_port       = "22"
-#document_root  = "/var/www-vhost/testing.localnet/"
+#document_root  = "/var/www/octopress/"
 document_root  = "~/www/nynim.org/"
 rsync_delete   = true
 deploy_default = "rsync"
