@@ -86,6 +86,7 @@ the majority of the code.
 
 Links
 -----
-* Project home: [http://nynim.org/projects/svn2svn](http://nynim.org/projects/svn2svn)
-* Github: [https://github.com/tonyduckles/svn2svn](https://github.com/tonyduckles/svn2svn)
-* Git @ nynim.org [http://git.nynim.org/svn2svn.git](http://git.nynim.org/svn2svn.git)
+* Introduction: "**[svn2svn: Replaying SVN History](http://nynim.org/blog/2012/02/01/svn2svn-replaying-svn-history/)**"
+* Project page: [http://nynim.org/projects/svn2svn](http://nynim.org/projects/svn2svn)
+* Source code @ Github: [https://github.com/tonyduckles/svn2svn](https://github.com/tonyduckles/svn2svn)
+* Source code @ git.nynim.org [http://git.nynim.org/svn2svn.git](http://git.nynim.org/svn2svn.git)
