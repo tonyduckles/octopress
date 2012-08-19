@@ -51,7 +51,6 @@ linklog_marker_position_feed: after
 standard_post_marker:
 
 titlecase: true       # Converts page and post titles to titlecase
-lsi: true             # Latent semantic indexing
 
 # To change the layout's default sidebar Add a new sidebar source/_includes/sidebars/your_sidebar.html
 # then make changes below, eg. post_sidebar: your_sidebar.html

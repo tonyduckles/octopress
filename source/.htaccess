@@ -22,7 +22,7 @@ Options -Indexes
 ServerSignature Off
 
 # Error pages
-ErrorDocument 400 /page-not-found/
-ErrorDocument 401 /page-not-found/
-ErrorDocument 403 /page-not-found/
-ErrorDocument 404 /page-not-found/
+ErrorDocument 400 /404/
+ErrorDocument 401 /404/
+ErrorDocument 403 /404/
+ErrorDocument 404 /404/

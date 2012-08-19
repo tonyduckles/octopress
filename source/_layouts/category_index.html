@@ -5,25 +5,7 @@ body_id: archive
 ---
 
 <div id="blog-archives" class="category">
-{% if site.categories[page.category] and site.pages_guitartabs[page.category] %}
-<h1>Blog Posts</h1>
-{% endif %}
 {% for post in site.categories[page.category] %}
-{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-{% unless year == this_year %}
-  {% assign year = this_year %}
-  <h2>{{ year }}</h2>
-{% endunless %}
-{% include post/variables.html %}
-<article {% if linklog %}class='linklog'{% endif %}>
-  {% include archive_post.html %}
-</article>
-{% endfor %}
-
-{% if site.categories[page.category] and site.pages_guitartabs[page.category] %}
-<h1>Guitar Tabs</h1>
-{% endif %}
-{% for post in site.pages_guitartabs[page.category] %}
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
   {% assign year = this_year %}
