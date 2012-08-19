@@ -7,7 +7,5 @@ categories:
 - Quick Notes
 tags:
 - legal
+external-url: http://www.nytimes.com/2006/03/19/opinion/19crichton.html
 ---
-
-[http://www.nytimes.com/2006/03/19/opinion/19crichton.html](http://www.nytimes.com/2006/03/19/opinion/19crichton.html)
-

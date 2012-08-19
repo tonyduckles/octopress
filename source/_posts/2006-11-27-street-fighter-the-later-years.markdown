@@ -8,6 +8,7 @@ categories:
 tags:
 - humor
 - videogames
+external-url: http://www.collegehumor.com/tag:streetfighterthelateryears
 ---
 
 I don't know about you, but I remember playing a fair amount of
@@ -16,6 +17,3 @@ in the day. College Humor is running this hilarious
 [series](http://www.collegehumor.com/tag:streetfighterthelateryears), looking
 into the lives of the Street Fighter combatants...10 years later. \*insert
 suspenseful music here!\*
-
-**[http://www.collegehumor.com/tag:streetfighterthelateryears](http://www.collegehumor.com/tag:streetfighterthelateryears)**
-
