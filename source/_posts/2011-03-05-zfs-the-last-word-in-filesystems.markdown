@@ -6,7 +6,8 @@ comments: true
 description: "Introduction and overview of ZFS and why it's darn cool"
 keywords: "zfs, filesystems, raid, hardware, hard drives, checksums, snapshots"
 categories:
-- Blog
+- Storage
+- UNIX
 tags:
 - storage
 - zfs

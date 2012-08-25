@@ -4,7 +4,7 @@ title: Maintaining Online Identities
 date: '2007-09-11 20:47:44'
 comments: true
 categories:
-- Blog
+- Security
 tags:
 - password
 - security

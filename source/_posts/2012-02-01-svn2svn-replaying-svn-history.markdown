@@ -6,7 +6,6 @@ comments: true
 description: "Using a custom script to replay the full logical history of /trunk in a source Subversion repository to /trunk in a brand-new target Subversion repository."
 keywords: "svn2svn, subversion replay, svn replay, subversion replay filter, svn replay filter, subversion replicate, svn replicate, subversion replicate filter, svn replicate filter"
 categories:
-- Blog
 - Coding
 tags:
 - svn

@@ -6,7 +6,9 @@ comments: true
 description: "Moving e-mail from Gmail to Google Apps for your domain over IMAP using imapsync"
 keywords: "google, google apps, imap, imapsync, email"
 categories:
-- Blog
+- Storage
+- E-mail
+- UNIX
 tags:
 - email
 - gmail

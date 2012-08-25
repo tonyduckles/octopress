@@ -6,7 +6,7 @@ comments: true
 description: "Exploring and understanding the dot-files in your $HOME directory, and tracking changes to the dot-files in your $HOME directory via Git."
 keywords: "home directory, dotfiles, home directory dotfiles, home directory git, home directory dotfiles git, dotfiles git, home directory bashrc, bashrc, home directory inputrc, inputrc"
 categories:
-- Blog
+- UNIX
 tags:
 - git
 - dotfiles

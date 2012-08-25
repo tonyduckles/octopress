@@ -4,7 +4,7 @@ title: del.icio.us director
 date: '2007-05-19 23:23:24'
 comments: true
 categories:
-- Blog
+- Web
 tags:
 - delicious
 - webapps

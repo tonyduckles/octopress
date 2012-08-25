@@ -5,7 +5,8 @@ date: 2012-06-04 21:25
 comments: true
 description: "Using VMware ESXi for a home file-server along with ZFS-powered mass storage."
 categories:
-- Blog
+- Storage
+- Hardware
 tags:
 - zfs
 - storage

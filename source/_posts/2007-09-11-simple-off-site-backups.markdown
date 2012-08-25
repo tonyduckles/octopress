@@ -4,7 +4,7 @@ title: Simple Off-Site Backups...?
 date: '2007-09-11 20:23:38'
 comments: true
 categories:
-- Blog
+- Storage
 tags:
 - backups
 ---

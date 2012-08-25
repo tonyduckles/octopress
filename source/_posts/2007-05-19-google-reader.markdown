@@ -4,7 +4,7 @@ title: Google Reader
 date: '2007-05-19 21:46:18'
 comments: true
 categories:
-- Blog
+- Web
 tags:
 - google
 - googlereader

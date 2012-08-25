@@ -4,7 +4,7 @@ title: reBlog - Web-Based, Server-Side RSS Aggregator
 date: '2006-03-21 22:08:58'
 comments: true
 categories:
-- Blog
+- Web
 tags:
 - rss
 - software

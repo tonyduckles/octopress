@@ -6,7 +6,9 @@ comments: true
 description: "Backup your Google Apps or Gmail e-mail over IMAP using imapsync"
 keywords: "backup email, backup mail, backup google email, backup google mail, backup google apps email, backup google apps mail, backup email imap, backup mail imap, backup email imapsync, backup mail imapsync"
 categories:
-- Blog
+- Storage
+- E-mail
+- UNIX
 tags:
 - backups
 - email

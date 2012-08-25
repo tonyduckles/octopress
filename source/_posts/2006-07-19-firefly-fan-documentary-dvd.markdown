@@ -4,7 +4,7 @@ title: Firefly & Fan Documentary DVD
 date: '2006-07-19 21:17:05'
 comments: true
 categories:
-- Blog
+- Entertainment
 tags:
 - firefly
 - scifi
