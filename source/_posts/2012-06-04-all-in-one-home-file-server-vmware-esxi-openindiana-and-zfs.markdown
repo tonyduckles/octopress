@@ -4,6 +4,7 @@ title: "All-In-One Home File Server: VMware ESXi, OpenIndiana, and ZFS"
 date: 2012-06-04 21:25
 comments: true
 description: "Using VMware ESXi for a home file-server along with ZFS-powered mass storage."
+keywords: "esxi openindiana, esxi openindiana zfs, all in one openindiana zfs, home all in one esxi"
 categories:
 - Storage
 - Hardware

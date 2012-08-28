@@ -3,6 +3,8 @@ layout: post
 title: "Using Kerberos (GSSAPI) Auth with OpenSSH in Cygwin on Windows"
 date: 2012-08-25 17:19
 comments: true
+description: "Using Heimdal (implements Kerberos 5) on Cygwin to get Kerberized SSH on Windows"
+keywords: "cygwin kerberos, cygwin kerberos ssh, cygwin heimdal ssh"
 categories:
 - UNIX
 tags:
