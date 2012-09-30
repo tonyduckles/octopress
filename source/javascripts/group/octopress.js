@@ -235,7 +235,7 @@ var octopress = (function(){
           var count = parseInt(target.attr('data-count'))
           var skip_forks = target.attr('data-skip') == 'true';
           $.ajax({
-              url: "//api.github.com/users/"+user+"/repos?callback=?"
+              url: "https://api.github.com/users/"+user+"/repos?callback=?"
             , dataType: 'jsonp'
             , error: function (err) { target.find('.loading').addClass('error').text("Error loading feed"); }
             , success: function(data) {
