@@ -60,13 +60,13 @@ over standard `http://`, `svn://`, `svn+ssh://`, etc. methods.
 
 Usage
 -----
-See `svn2svn.py --help`:
+See `svnreplay.py --help`:
 
-    $ ./svn2svn.py --help
-    svn2svn, version 1.5.0
+    $ ./svnreplay.py --help
+    svn2svn, version 1.7.0
     <http://nynim.org/projects/svn2svn> <https://github.com/tonyduckles/svn2svn>
     
-    Usage: svn2svn.py [OPTIONS] source_url target_url
+    Usage: svnreplay.py [OPTIONS] source_url target_url
     
     Replicate (replay) history from one SVN repository to another. Maintain
     logical ancestry wherever possible, so that 'svn log' on the replayed repo
@@ -76,7 +76,7 @@ See `svn2svn.py --help`:
       Create a copy of only /trunk from source repo, starting at r5000
       $ svnadmin create /svn/target
       $ svn mkdir -m 'Add trunk' file:///svn/target/trunk
-      $ svn2svn -av -r 5000 http://server/source/trunk file:///svn/target/trunk
+      $ svnreplay -av -r 5000 http://server/source/trunk file:///svn/target/trunk
         1. The target_url will be checked-out to ./_wc_target
         2. The first commit to http://server/source/trunk at/after r5000 will be
            exported & added into _wc_target
@@ -87,7 +87,7 @@ See `svn2svn.py --help`:
            logical ancestry where possible.
     
       Use continue-mode (-c) to pick-up where the last run left-off
-      $ svn2svn -avc http://server/source/trunk file:///svn/target/trunk
+      $ svnreplay -avc http://server/source/trunk file:///svn/target/trunk
         1. The target_url will be checked-out to ./_wc_target, if not already
            checked-out
         2. All new revisions affecting http://server/source/trunk starting from
@@ -96,41 +96,47 @@ See `svn2svn.py --help`:
            logical ancestry where possible.
     
     Options:
-          --version       show program's version number and exit
-      -h, --help          show this help message and exit
-      -v, --verbose       enable additional output (use -vv or -vvv for more)
-      -a, --archive       archive/mirror mode; same as -UDP (see REQUIRE's below)
-                          maintain same commit author, same commit time, and
-                          file/dir properties
-      -U, --keep-author   maintain same commit authors (svn:author) as source
-                          (REQUIRES 'pre-revprop-change' hook script to allow
-                          'svn:author' changes)
-      -D, --keep-date     maintain same commit time (svn:date) as source
-                          (REQUIRES 'pre-revprop-change' hook script to allow
-                          'svn:date' changes)
-      -P, --keep-prop     maintain same file/dir SVN properties as source
-      -R, --keep-revnum   maintain same rev #'s as source. creates placeholder
-                          target revisions (by modifying a 'svn2svn:keep-revnum'
-                          property at the root of the target repo)
-      -c, --continue      continue from last source commit to target (based on
-                          svn2svn:* revprops)
-      -f, --force         allow replaying into a non-empty target folder
-      -r, --revision=ARG  revision range to replay from source_url
-                          A revision argument can be one of:
-                             START        start rev # (end will be 'HEAD')
-                             START:END    start and ending rev #'s
-                          Any revision # formats which SVN understands are
-                          supported, e.g. 'HEAD', '{2010-01-31}', etc.
-      -u, --log-author    append source commit author to replayed commit mesages
-      -d, --log-date      append source commit time to replayed commit messages
-      -l, --limit=NUM     maximum number of source revisions to process
-      -n, --dry-run       process next source revision but don't commit changes to
-                          target working-copy (forces --limit=1)
-      -x, --verify        verify ancestry and content for changed paths in commit
-                          after every target commit or last target commit
-      -X, --verify-all    verify ancestry and content for entire target_url tree
-                          after every target commit or last target commit
-          --debug         enable debugging output (same as -vvv)
+          --version         show program's version number and exit
+      -h, --help            show this help message and exit
+      -v, --verbose         Enable additional output (use -vv or -vvv for more).
+      -a, --archive         Archive/mirror mode; same as -UDP (see REQUIRES
+                            below).
+                            Maintain same commit author, same commit time, and
+                            file/dir properties.
+      -U, --keep-author     Maintain same commit authors (svn:author) as source.
+                            (REQUIRES 'pre-revprop-change' hook script to allow
+                            'svn:author' changes.)
+      -D, --keep-date       Maintain same commit time (svn:date) as source.
+                            (REQUIRES 'pre-revprop-change' hook script to allow
+                            'svn:date' changes.)
+      -P, --keep-prop       Maintain same file/dir SVN properties as source.
+      -R, --keep-revnum     Maintain same rev #'s as source. Creates placeholder
+                            target revisions (by modifying a 'svn2svn:keep-revnum'
+                            property at the root of the target repo).
+      -c, --continue        Continue from last source commit to target (based on
+                            svn2svn:* revprops).
+      -f, --force           Allow replaying into a non-empty target-repo folder.
+      -r, --revision=ARG    Revision range to replay from source_url.
+                            A revision argument can be one of:
+                               START        Start rev # (end will be 'HEAD')
+                               START:END    Start and ending rev #'s
+                            Any revision # formats which SVN understands are
+                            supported, e.g. 'HEAD', '{2010-01-31}', etc.
+      -u, --log-author      Append source commit author to replayed commit
+                            mesages.
+      -d, --log-date        Append source commit time to replayed commit messages.
+      -l, --limit=NUM       Maximum number of source revisions to process.
+      -n, --dry-run         Process next source revision but don't commit changes
+                            to target working-copy (forces --limit=1).
+      -x, --verify          Verify ancestry and content for changed paths in
+                            commit after every target commit or last target
+                            commit.
+      -X, --verify-all      Verify ancestry and content for entire target_url tree
+                            after every target commit or last target commit.
+          --pre-commit=CMD  Run the given shell script before each replayed
+                            commit, e.g. to modify file-content during replay.
+                            Called as: CMD [wc_path] [source_rev]
+          --debug           Enable debugging output (same as -vvv).
 
 Side Effects
 ------------
@@ -158,7 +164,7 @@ Examples
 
     $ svnadmin create /svn/target
     $ svn mkdir -m 'Add trunk' file:///svn/target/trunk
-    $ svn2svn -av -r 5000 http://server/source/trunk file:///svn/target/trunk
+    $ svnreplay -av -r 5000 http://server/source/trunk file:///svn/target/trunk
 
 1. The `target_url` will be checked-out to `./_wc_target`.
 2. The first commit to `http://server/source/trunk` at/after r5000 will be
@@ -171,7 +177,7 @@ Examples
 
 **Use continue-mode (-c) to pick-up where the last run left-off**
 
-    $ svn2svn -avc http://server/source/trunk file:///svn/target/trunk
+    $ svnreplay -avc http://server/source/trunk file:///svn/target/trunk
 
 1. The `target_url` will be checked-out to `./_wc_target`, if not already
    checked-out
