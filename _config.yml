@@ -46,8 +46,8 @@ excerpt_in_feed: false # Truncate excerpted articles in the atom feed
 permalink_label: "Permalink"
 permalink_label_feed: "&#9875; Permalink"
 linklog_marker: "&rarr;"
-linklog_marker_position: after
-linklog_marker_position_feed: after
+linklog_marker_position: before
+linklog_marker_position_feed:
 standard_post_marker:
 
 titlecase: true       # Converts page and post titles to titlecase
