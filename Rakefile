@@ -11,6 +11,7 @@ ssh_port       = "22"
 #document_root  = "/var/www/octopress/"
 document_root  = "~/www/nynim.org/"
 rsync_delete   = true
+rsync_args     = "-c"  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
 
 # Hidden "dot" files that should be included with the deployed site (see task copydot)
@@ -304,7 +305,7 @@ task :rsync do
     exclude = "--exclude-from '#{File.expand_path('./rsync-exclude')}'"
   end
   puts "## Deploying website via Rsync"
-  ok_failed system("rsync -avzce 'ssh -p #{ssh_port}' #{exclude} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
+  ok_failed system("rsync -avze 'ssh -p #{ssh_port}' #{exclude} #{rsync_args} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
 end
 
 desc "deploy public directory to github pages"
@@ -327,8 +328,20 @@ multitask :push do
       puts "\n## Commiting: #{message}"
       system "git commit -m \"#{message}\""
       puts "\n## Pushing generated #{deploy_dir} website"
-      system "git push origin #{deploy_branch}"
-      puts "\n## GitHub Pages deploy complete"
+      if system "git push origin #{deploy_branch}"
+        puts "\n## GitHub Pages deploy complete"
+      else
+        remote = `git remote -v`
+        repo_url = case remote
+                   when /(http[^\s]+)/
+                     $1
+                   when /(git@[^\s]+)/
+                     $1
+                   else
+                     ""
+                   end
+        raise "\n## Octopress could not push to #{repo_url}"
+      end
     end
   else
     puts "This project isn't configured for deploying to GitHub Pages\nPlease run `rake setup_github_pages[your-deployment-repo-url]`." 
@@ -386,9 +399,14 @@ task :setup_github_pages, :repo do |t, args|
     puts "(For example, 'git@github.com:your_username/your_username.github.com)"
     repo_url = get_stdin("Repository url: ")
   end
-  user = repo_url.match(/:([^\/]+)/)[1]
+  unless repo_url[-4..-1] == ".git"
+    repo_url << ".git"
+  end
+  raise "!! The repo URL that was input was malformed." unless repo_url.match(/https:\/\/github.com\/[^\/]+\/[^\/]+/) or repo_url.match(/git@github.com:[^\/]+\/[^\/]+/)
+  user_match = repo_url.match(/(:([^\/]+)|(github.com\/([^\/]+)))/)
+  user = user_match[2] || user_match[4]
   branch = (repo_url.match(/\/[\w-]+.github.com/).nil?) ? 'gh-pages' : 'master'
-  project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  project = (branch == 'gh-pages') ? repo_url.match(/\/(.+)(\.git)/)[1] : ''
   url = "http://#{user}.github.com"
   url += "/#{project}" unless project == ''
   unless `git remote -v`.match(/origin.+?octopress.git/).nil?
