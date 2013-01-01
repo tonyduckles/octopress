@@ -1,6 +1,5 @@
 require './plugins/raw'
 require './plugins/config'
-require 'albino'
 require 'pygments'
 require 'fileutils'
 require 'digest/md5'
@@ -12,24 +11,15 @@ module HighlightCode
   include TemplateWrapper
   include SiteConfig
   def pygments(code, lang)
-    path = File.join(PYGMENTS_CACHE_DIR, "#{lang}-#{Digest::MD5.hexdigest(code)}.html") if defined?(PYGMENTS_CACHE_DIR)
-    if File.exist?(path)
-      highlighted_code = File.read(path)
-    else
-      if get_config('pygments')
-        highlighted_code = Albino.new(code, lang, :html)
-      else
-        highlighted_code = Pygments.highlight(code, :lexer => lang, :formatter => 'html', :options => {:encoding => 'utf-8'}) 
-      end
-      highlighted_code = highlighted_code.gsub(/{{/, '&#x7b;&#x7b;').gsub(/{%/, '&#x7b;&#x25;')
-      File.open(path, 'w') {|f| f.print(highlighted_code) } if path
-    end
+    highlighted_code = Pygments.highlight(code, :lexer => lang, :formatter => 'html', :options => {:encoding => 'utf-8'}) 
+    highlighted_code = highlighted_code.gsub(/{{/, '&#x7b;&#x7b;').gsub(/{%/, '&#x7b;&#x25;')
     highlighted_code.to_s
   rescue 
     puts $!,$@
   end
 
-  def highlight(code, lang, options = {})
+  def highlight(code, options = {})
+    lang = options[:lang]
     lang = 'ruby' if lang == 'ru'
     lang = 'objc' if lang == 'm'
     lang = 'perl' if lang == 'pl'
@@ -38,31 +28,45 @@ module HighlightCode
     lang = 'csharp' if lang == 'cs'
     lang = 'plain' if lang == '' or lang.nil? or !lang
 
-    url       = options[:url]       || nil
-    title     = options[:title]     || (url ? ' ' : nil)
-    link_text = options[:link_text] || nil
-    wrap      = options[:wrap]      || true
-    marks     = options[:marks]
-    linenos   = options[:linenos]
-    start     = options[:start]     || 1
+    url        = options[:url]        || nil
+    title      = options[:title]      || (url ? ' ' : nil)
+    link_text  = options[:link_text]  || nil
+    wrap       = options[:wrap]       || true
+    marks      = options[:marks]
+    linenos    = options[:linenos]
+    start      = options[:start]      || 1
+    no_cache   = options[:no_cache]   || false
+    cache_path = options[:cache_path] || nil
 
-    if lang == 'plain'
-      # Escape html tags
-      code = code.gsub('<','&lt;')
-    elsif lang.include? "-raw"
-      output  = "``` #{$1.sub('-raw', '')}\n"
-      output += code
-      output += "\n```\n"
-    else
-      code = pygments(code, lang).match(/<pre>(.+)<\/pre>/m)[1].gsub(/ *$/, '') #strip out divs <div class="highlight">
+    # Attempt to retrieve cached code
+    cache = nil
+    unless no_cache
+      path  = cache_path || get_cache_path(PYGMENTS_CACHE_DIR, lang, options.to_s + code)
+      cache = read_cache(path)
     end
 
-    code = tableize_code(code, lang, { linenos: linenos, start: start, marks: marks })
-    title = captionize(title, url, link_text) if title
+    unless cache
+     if lang == 'plain'
+        # Escape html tags
+        code = code.gsub('<','&lt;')
+      else
+        code = pygments(code, lang).match(/<pre>(.+)<\/pre>/m)[1].gsub(/ *$/, '') #strip out divs <div class="highlight">
+      end
+      code = tableize_code(code, lang, {linenos: linenos, start: start, marks: marks })
+      title = captionize(title, url, link_text) if title
+      code = "<figure class='code'>#{title}#{code}</figure>"
+      File.open(path, 'w') {|f| f.print(code) } unless no_cache
+    end
+    code = safe_wrap(cache || code) if wrap
+    code
+  end
 
-    figure = "<figure class='code'>#{title}#{code}</figure>"
-    figure = safe_wrap(figure) if wrap
-    figure
+  def read_cache (path)
+    code = File.exist?(path) ? File.read(path) : nil
+  end
+
+  def get_cache_path (dir, name, str)
+    File.join(dir, "#{name}-#{Digest::MD5.hexdigest(str)}.html")
   end
 
   def captionize (caption, url, link_text)
@@ -75,7 +79,7 @@ module HighlightCode
     start = options[:start] || 1
     lines = options[:linenos] || true
     marks = options[:marks] || []
-    table = "<table class='highlight'>"
+    table = "<div class='highlight'><table>"
     table += number_lines(start, code.lines.count, marks) if lines
     table += "<td class='main #{'unnumbered' unless lines} #{lang}'><pre>"
     code.lines.each_with_index do |line,index|
@@ -88,7 +92,7 @@ module HighlightCode
       line = line.strip.empty? ? ' ' : line
       table += "<div class='#{classes}'>#{line}</div>"
     end
-    table +="</pre></td></tr></table>"
+    table +="</pre></td></tr></table></div>"
   end
 
   def number_lines (start, count, marks)
@@ -112,7 +116,7 @@ module HighlightCode
     linenos   = input.match(/\s*linenos:(\w+)/i)
     marks     = get_marks(input)
     url       = input.match(/\s*url:\s*(("(.+?)")|('(.+?)')|(\S+))/i)
-    link_text = input.match(/\s*link_text:\s*(("(.+?)")|('(.+?)')|(\S+))/i)
+    link_text = input.match(/\s*link[-_]text:\s*(("(.+?)")|('(.+?)')|(\S+))/i)
     start     = input.match(/\s*start:(\d+)/i)
     endline   = input.match(/\s*end:(\d+)/i)
 
@@ -126,7 +130,7 @@ module HighlightCode
       end:          (endline.nil? ? nil : endline[1].to_i),
       link_text:    (link_text.nil? ? nil : link_text[3] || link_text[5] || link_text[6]) 
     }
-    opts.merge(get_range(input, opts[:start], opts[:end]))
+    opts.merge(parse_range(input, opts[:start], opts[:end]))
   end
 
   def clean_markup (input)
@@ -155,11 +159,24 @@ module HighlightCode
     marks
   end
 
-  def get_range (input, start, endline)
+  def parse_range (input, start, endline)
     if input =~ / *range:(\d+)-(\d+)/i
       start = $1.to_i
       endline = $2.to_i
     end
     {start: start, end: endline}
   end
+  
+  def get_range (code, start, endline)
+    length    = code.lines.count
+    start   ||= 1
+    endline ||= length
+    if start > 1 or endline < length
+      raise "#{filepath} is #{length} lines long, cannot begin at line #{start}" if start > length
+      raise "#{filepath} is #{length} lines long, cannot read beyond line #{endline}" if endline > length
+      code = code.split(/\n/).slice(start - 1, endline + 1 - start).join("\n")
+    end
+    code
+  end
+
 end
