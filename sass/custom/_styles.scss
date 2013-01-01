@@ -28,3 +28,9 @@ aside.sidebar {
     .rank-5 { font-size: 80%; }
   }
 }
+
+#content article .entry-content {
+  // Add some breathing room after list items
+  ul li { margin-bottom: .5em; }
+  ol li { margin-bottom: .5em; }
+}
