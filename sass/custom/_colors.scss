@@ -5,6 +5,12 @@
 
   For a handy color picker try http://hslpicker.com */
 
+// Main Link Colors
+$link-color: lighten(#165b94, 3) !default;
+$link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
+$link-color-visited: adjust-color($link-color, $lightness: -5, $saturation: -15) !default;
+$link-color-active: adjust-color($link-color-hover, $lightness: -20) !default;
+
 // Main Section Colors
 $page-bg: lighten(desaturate(#263347, 5), 60);
 $header-bg: lighten(desaturate(#263347, 10), 5);

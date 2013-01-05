@@ -8,6 +8,9 @@
   }
 }
 
+// Add drop-shadow to title
+body header hgroup h1 { text-shadow: #333 2px 2px 2px; }
+
 aside.sidebar {
   #followme {
     img {
