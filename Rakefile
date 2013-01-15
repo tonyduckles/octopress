@@ -32,7 +32,7 @@ posts_dir       = "_posts"    # directory for blog files
 themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-timezone        = "local"     # default time and date used to local timezone. Timezones (under TZ column): http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone        = "America/Chicago"     # default time and date used to local timezone. Timezones (under TZ column): http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 server_host     = ENV['OCTOPRESS_IP']   || '0.0.0.0'   # host ip address for preview server
 server_port     = ENV['OCTOPRESS_PORT'] || '4000'      # port for preview server eg. localhost:4000
 
