@@ -5,10 +5,8 @@ date: 2009-12-28 23:20
 comments: true
 categories:
 - Quick Notes
-tags:
-- humor
-- supermariobros
-- videogames
+- Humor
+- Video Games
 ---
 
 [{% img /images/2010/08/500x_marioscloset.jpg %}](http://kotaku.com/5430723/what-to-wear+a)

@@ -8,9 +8,6 @@ keywords: "zfs, filesystems, raid, hardware, hard drives, checksums, snapshots"
 categories:
 - Storage
 - UNIX
-tags:
-- storage
-- zfs
 ---
 
 I've been spending a lot of time lately reading-up on different options since

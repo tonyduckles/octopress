@@ -5,11 +5,6 @@ date: '2007-05-19 21:46:18'
 comments: true
 categories:
 - Web
-tags:
-- google
-- googlereader
-- rss
-- webapps
 ---
 
 I really dig the whole web-based RSS aggregator/reader thing. For the past

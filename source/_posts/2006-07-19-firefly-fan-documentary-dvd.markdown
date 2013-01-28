@@ -5,10 +5,6 @@ date: '2006-07-19 21:17:05'
 comments: true
 categories:
 - Entertainment
-tags:
-- firefly
-- scifi
-- tv
 ---
 
 I finally succumbed to recommendations of friends and picked-up the Firefly TV

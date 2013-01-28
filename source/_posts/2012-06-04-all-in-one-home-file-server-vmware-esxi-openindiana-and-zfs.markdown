@@ -8,11 +8,6 @@ keywords: "esxi openindiana, esxi openindiana zfs, all in one openindiana zfs, h
 categories:
 - Storage
 - Hardware
-tags:
-- zfs
-- storage
-- esxi
-- vmware
 ---
 
 Just over a year ago, I built a new home file-server since I was quickly

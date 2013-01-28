@@ -5,7 +5,6 @@ date: '2006-03-20 19:10:46'
 comments: true
 categories:
 - Quick Notes
-tags:
-- legal
+- Legal
 external-url: http://www.nytimes.com/2006/03/19/opinion/19crichton.html
 ---

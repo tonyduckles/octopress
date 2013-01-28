@@ -5,10 +5,6 @@ date: '2007-09-11 20:47:44'
 comments: true
 categories:
 - Security
-tags:
-- password
-- security
-- webapps
 ---
 
 I stumbled across this neat site called [Clipperz](http://www.clipperz.com/) a

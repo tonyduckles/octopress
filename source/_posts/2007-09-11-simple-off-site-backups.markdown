@@ -5,8 +5,6 @@ date: '2007-09-11 20:23:38'
 comments: true
 categories:
 - Storage
-tags:
-- backups
 ---
 
 Lately I've been consumed with the idea of getting more serious about backing-

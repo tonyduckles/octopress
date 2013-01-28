@@ -9,11 +9,6 @@ categories:
 - Storage
 - E-mail
 - UNIX
-tags:
-- email
-- gmail
-- google
-- imap
 ---
 
 Two years ago, I transitioned from using regular Gmail (i.e. "...@gmail.com")

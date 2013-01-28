@@ -5,9 +5,6 @@ date: '2007-05-19 23:23:24'
 comments: true
 categories:
 - Web
-tags:
-- delicious
-- webapps
 ---
 
 Yes, somewhere along the line...I became a geek. I started using multiple

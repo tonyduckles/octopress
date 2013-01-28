@@ -9,12 +9,6 @@ categories:
 - Storage
 - E-mail
 - UNIX
-tags:
-- backups
-- email
-- gmail
-- google
-- imap
 ---
 
 I have confidence in Google's ability to keep their e-mail service up-and-

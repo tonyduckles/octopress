@@ -5,10 +5,6 @@ title: 'Nynim.org: New & Improved'
 comments: true
 categories:
 - Blog
-tags:
-- lifestream
-- news
-- sweetcron
 ---
 
 I've resurrected my nearly abandoned website and breathed new life into it!

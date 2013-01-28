@@ -7,11 +7,8 @@ description: "Using Heimdal (implements Kerberos 5) on Cygwin to get Kerberized 
 keywords: "cygwin kerberos, cygwin kerberos ssh, cygwin heimdal ssh"
 categories:
 - UNIX
-tags:
-- ssh
-- kerberos
-- cygwin
 ---
+
 On my Windows machines at both work and home, I like to run [Cygwin](http://www.cygwin.com/)
 to get a UNIX-like environment on Windows: `screen`, `ssh`, `grep`, etc.
 I use SSH's [public key authentication](https://hkn.eecs.berkeley.edu/~dhsu/ssh_public_key_howto.html)

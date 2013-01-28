@@ -5,8 +5,7 @@ date: '2007-08-06 22:03:31'
 comments: true
 categories:
 - Quick Notes
-tags:
-- humor
+- Humor
 external-url: http://kotaku.com/gaming/clips/minesweeper-the-movie-286639.php
 ---
 

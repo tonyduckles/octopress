@@ -7,9 +7,6 @@ description: "Introduction to Octopress and my migration path from Wordpress to 
 keywords: "octopress, octopress overview, octopress introduction, octopress wordpress, blog, wordpress, sass, jekkyl, ruby"
 categories:
 - Blog
-tags:
-- octopress
-- news
 ---
 
 A few days ago I stumbled upon a neat project named **[Octopress](http://octopress.org/)**:

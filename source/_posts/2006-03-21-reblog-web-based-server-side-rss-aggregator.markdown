@@ -5,10 +5,7 @@ date: '2006-03-21 22:08:58'
 comments: true
 categories:
 - Web
-tags:
-- rss
-- software
-- webapps
+- Software
 ---
 
 Like many people these days, I use RSS feeds to keep up on news from various

@@ -5,9 +5,8 @@ date: '2006-11-27 22:43:12'
 comments: true
 categories:
 - Quick Notes
-tags:
-- humor
-- videogames
+- Humor
+- Video Games
 external-url: http://www.collegehumor.com/tag:streetfighterthelateryears
 ---
 

@@ -5,9 +5,7 @@ date: 2009-11-13 19:57
 comments: true
 categories:
 - Quick Notes
-tags:
-- iphone
-- videogame
+- Video Games
 ---
 
 [{% img /images/2010/08/geodefense_1250610916.jpg %}](http://www.appolicio us.com/games/apps/24846-geodefense-lite-critical-thought-games)

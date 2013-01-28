@@ -5,9 +5,7 @@ date: 2009-11-22 23:21
 comments: true
 categories:
 - Quick Notes
-tags:
-- google
-- humor
+- Humor
 ---
 
 [{% img /images/2010/08/autocompletemecom-howtoraise.jpg %}](http://autocompleteme.com/)

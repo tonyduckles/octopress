@@ -7,9 +7,6 @@ description: "Using a custom script to replay the full logical history of /trunk
 keywords: "svn2svn, subversion replay, svn replay, subversion replay filter, svn replay filter, subversion replicate, svn replicate, subversion replicate filter, svn replicate filter"
 categories:
 - Coding
-tags:
-- svn
-- python
 ---
 
 I've found myself in a (potentially unique) situation where we have a

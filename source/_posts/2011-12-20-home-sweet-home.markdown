@@ -7,9 +7,6 @@ description: "Exploring and understanding the dot-files in your $HOME directory,
 keywords: "home directory, dotfiles, home directory dotfiles, home directory git, home directory dotfiles git, dotfiles git, home directory bashrc, bashrc, home directory inputrc, inputrc"
 categories:
 - UNIX
-tags:
-- git
-- dotfiles
 ---
 
 {% img right /images/2011/12/img_Terminal.png 180 180 %}
