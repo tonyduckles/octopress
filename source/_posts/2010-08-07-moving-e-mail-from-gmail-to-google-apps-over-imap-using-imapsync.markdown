@@ -20,6 +20,7 @@ the following article back then which gave me helpful hints on how to use
 
 I adapted that script for my own needs, and I was able to successfully copy
 all the mail from my regular Gmail account to my new Google Apps account.
+
 <!-- more -->
 
 Here is the final script I ended-up with:
