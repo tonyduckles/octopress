@@ -8,6 +8,6 @@ footer: false
 
 <section>
 <ul id="category-list">
-{% category_list [counter:true] %}
+{% category_list [counter:true exclude:guitar-tabs] %}
 </ul>
 </section>

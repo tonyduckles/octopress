@@ -87,6 +87,10 @@ module Jekyll
         @opts['counter'] = $1
         markup = markup.strip.sub(/counter:\w+/i,'')
       end
+      if markup.strip =~ /\s*exclude:([A-Za-z0-9_-]+)/i
+        @opts['exclude'] = $1
+        markup = markup.strip.sub(/exclude:[A-Za-z0-9_-]+/i,'')
+      end
       super
     end
 
@@ -97,16 +101,17 @@ module Jekyll
       categories = context.registers[:site].categories
       categories.keys.sort_by{ |str| str.downcase }.each do |category|
         url = category_dir + category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
-        html << "<li><a href='#{url}'>#{category}"
-        if @opts['counter']
-          html << " (#{categories[category].count})"
+        if not url =~ /#{@opts['exclude']}/i
+          html << "<li><a href='#{url}'>#{category}"
+          if @opts['counter']
+            html << " (#{categories[category].count})"
+          end
+          html << "</a></li>"
         end
-        html << "</a></li>"
       end
       html
     end
   end
-
 end
 
 Liquid::Template.register_tag('tag_cloud', Jekyll::TagCloud)
