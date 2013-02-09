@@ -4,20 +4,19 @@ status: publish
 title: About
 ---
 
-### Nynim.org
+My name is **Tony Duckles**. I'm a software engineer living in Madison, WI.
+I enjoy photography, traveling, cooking, and tinkering with new gadgets.
+
+## About this Site
+
+This site is written in [HTML5](http://html5.org/), proudly powered by
+[Octopress](http://octopress.org/), and hosted on [Dreamhost](http://dreamhost.com).
+
+## Nynim.org
 
      ny*nim [nI-nim]
      --noun
      1. Random five-letter combination that is pronounceable and easy to type.
      2. A word willed into existence by Tony Duckles due to the extreme difficulty
         in finding a short unregistered domain-name in this day and age.
-
-Nynim.org is the web-space of Tony Duckles, a place to show-case his thoughts,
-portfolio, and online-activities.
-
-### Tony Duckles
-
-Tony is a software-developer and photographer living in Madison, WI. He enjoys
-traveling, exploring culinary wonders, savoring the quiet-times, and following
-the latest technology news.
 
