@@ -80,7 +80,7 @@ got familiar with the code, and started hacking to extend the code to solve my
 problem at hand.
 
 The net-result is my own (nearly completely rewritten) take on the problem,
-a project which I'm also calling **[svn2svn](/projects/svn2svn/)**.
+a project which I'm also calling **[svn2svn](/code/svn2svn/)**.
 
 I've made several enhancements to the original script:
 
@@ -128,7 +128,7 @@ I've made several enhancements to the original script:
   _replaying_ the SVN history here will full control of the target content,
   so this opens a lot of interesting options.
 
-Check-out the [svn2svn project page](/projects/svn2svn/) for more details.
+Check-out the [svn2svn project page](/code/svn2svn/) for more details.
 
 Also, I have the project mirrored on [Github](https://github.com/tonyduckles/svn2svn)
 so please feel free to fork the project, send me issues/enhancements, or
