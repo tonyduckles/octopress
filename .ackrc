@@ -1,0 +1,7 @@
+--ignore-dir=.gist-cache
+--ignore-dir=.pygments-cache
+--ignore-dir=.sass-cache
+--ignore-dir=.themes
+--ignore-dir=_deploy
+--ignore-dir=_config.new
+--ignore-dir=public
