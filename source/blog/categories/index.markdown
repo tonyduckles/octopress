@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Categories"
+title: Categories
 comments: false
 sharing: false
 footer: false
