@@ -32,8 +32,8 @@ But once my spare-time dried up, all that old computer hardware just became *clu
 taking-up space and it seemed like such a pain to fire up an old computer just to
 tinker with some new configuration.
 
-So, going virtualizations held a lot of (obvious) appeal to me: minimize my physical
-hardware (less power consumed, less physical space, etc) while letting me easily
+So, going virtualized held a lot of (obvious) appeal to me: minimize my physical
+hardware (less power consumed, less physical space, etc.) while letting me easily
 tinker with new configurations.
 
 ## ZFS-Powered

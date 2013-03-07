@@ -39,7 +39,7 @@ and happily work on your sandboxed branch. Say that you decide to rename some of
 the pre-existing files/folders, so you run the appropriate `svn move` commands and
 happily commit those changes to your branch. Once everything is working happily,
 you go to merge these changes into `/trunk` and that all works great. After the
-commmit, if you run a `svn log -v -l1 /trunk` to look at the details of the most
+commit, if you run a `svn log -v -l1 /trunk` to look at the details of the most
 recent commit to trunk, you'll see something like this:
     A /trunk/Project/RenamedFolder (from /branches/my-fix/Project/RenamedFolder@12345)
 ...which only describes the (top-level) folder rename, not any add/modifications/renames/etc
@@ -90,7 +90,7 @@ I've made several enhancements to the original script:
   to walk backwards through the ancestry on a copy-from case: if we can trace
   back our ancestry to same source path we're replaying, then we can do an `svn
   copy` from that original parent and then do `svn export` to update the
-  contents of all the files to match the final copy-from verison. There's also
+  contents of all the files to match the final copy-from version. There's also
   some extra recursion that needs to happen here, to handle cases where child
   files got renamed inside of a parent-renamed folder. There are other
   edge-cases like files getting replaced inside a parent-renamed folder.
@@ -107,7 +107,7 @@ I've made several enhancements to the original script:
 
 * **Better verbosity output, and optional debug output.** As I was playing with
   the rewrite, I quickly found I needed better debug output, to see which shell
-  commands were being run and ot display just general debug/status messages as
+  commands were being run and to display just general debug/status messages as
   we do all this new complicate ancestry-walking logic. Bonus: the debugging
   messages have colored output, using [ANSI escape
   codes](http://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes) which all

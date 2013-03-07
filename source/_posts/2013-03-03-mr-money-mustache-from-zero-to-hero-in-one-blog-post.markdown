@@ -21,7 +21,7 @@ The bottom line is this: by focusing on happiness itself, you can lead a much be
 {% endblockquote %}
 
 Living within your means and cutting-back on needless spending means lower
-monthly expenses. By cutting thoses recurring expenses, you're able to save
+monthly expenses. By cutting those recurring expenses, you're able to save
 more money.  The more money you save, the more compounding interest and
 investing works in your favor. By learning to live more frugally, you're
 changing your **lifestyle and mindset** and you end-up not *needing* as much

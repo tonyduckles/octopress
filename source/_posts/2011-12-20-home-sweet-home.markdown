@@ -84,7 +84,7 @@ Vim to meet your needs. Simple things like getting syntax-highlighting
 and color-schemes set by default made for an oh-so-much more pleasant
 Vim experience.
 
-This all led me to learning a lot more about Vim and becoming much more proficent
+This all led me to learning a lot more about Vim and becoming much more proficient
 using Vim. It's now my text-based editor of choice. Once you get to know the
 key-bindings and the various commands, the command-chaining that you can do
 in Vim is incredibly powerful.

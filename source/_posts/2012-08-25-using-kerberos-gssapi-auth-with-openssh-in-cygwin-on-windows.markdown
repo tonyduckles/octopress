@@ -41,7 +41,7 @@ figured I'd write up what worked for me in case that helps other people.
    Alternatively, rather than fiddling with <code>/etc/krb5.conf</code> on my Cygwin
    install, I opted to use the <code>KRB5&#95;CONFIG</code> environment variable (see the
    <code>kinit</code> manpage) to point to a <code>~/.krb5.conf</code> file instead to keep my
-   Kerberos config confined to my <code>$HOME</code> directory (since I <a href="/blog/2011/12/20/home-sweet-home">keepmy $HOME directory under version control</a>).</li>
+   Kerberos config confined to my <code>$HOME</code> directory (since I <a href="/blog/2011/12/20/home-sweet-home">keep my $HOME directory under version control</a>).</li>
 <li>Modify your <code>~/.ssh/config</code> file to enable GSSAPI authentication:
    {% codeblock ~/.ssh/config %}
    GSSAPIAuthentication yes
