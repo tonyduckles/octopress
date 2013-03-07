@@ -147,5 +147,4 @@ It will be interesting to see how this plays-out over the next few months, to
 see what happens to my service at the end of a 30-day cycle (e.g. *how apparent
 will it be that my service has cut off and that I need to pump more money into
 my account?*), to see how often I use up my 500MB quota before the 30 days are
-up, etc. But, I'm still just darn excited to have interesting new
-options/alternatives.
+up, etc. I'm just darn excited to have interesting new options/alternatives.
