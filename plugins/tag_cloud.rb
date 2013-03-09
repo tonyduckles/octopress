@@ -106,7 +106,7 @@ module Jekyll
           if @opts['counter']
             html << " (#{categories[category].count})"
           end
-          html << "</a></li>"
+          html << "</a></li>\n"
         end
       end
       html
