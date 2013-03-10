@@ -5,3 +5,4 @@
 --ignore-dir=_deploy
 --ignore-dir=_config.new
 --ignore-dir=public
+--ignore-dir=source/stylesheets
