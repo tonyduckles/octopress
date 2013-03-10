@@ -41,22 +41,23 @@ starting from the current working directory crawling up through any parent
 directories until we find a `.ackrc` file (*or until we reach either `$HOME` or
 `/`*).
 
+(**Update 2012-03-10:** *It looks like [Ack v2.0](https://github.com/petdance/ack2)
+supports PWD .ackrc files natively, and has some other neat enhancements to boot!*)
+
 {% codeblock ack-wrapper lang:sh https://github.com/tonyduckles/dotfiles/blob/master/bin/ack-wrapper %}
 #!/bin/sh
-# Wrapper around 'ack' to crawl all directories from $PWD to / (or $HOME)
+# Wrapper around 'ack' to crawl all directories from `pwd` to / (or $HOME)
 # looking for a "local" .ackrc file. Useful for setting project-level
 # --ignore-dir settings.
 
-PWD=$(pwd)
+# Search for "local" .ackrc file in CWD or any parents
 HOME=~
-ack=$(type -P ack)
 ackrc=""
-
 match=""
-dir="$PWD"
-while [ "$dir" != "/" -a "$match" = "" ]; do
-    if [ -e "$dir/.ackrc" ]; then
-        if [ "$dir" != "$HOME" ]; then
+dir=$(pwd)
+while [ "${dir}" != "/" -a "${match}" = "" ]; do
+    if [ -e "${dir}/.ackrc" ]; then
+        if [ "${dir}" != "${HOME}" ]; then
             match=1
             echo "(Include: ${dir}/.ackrc)"
             ackrc=$(egrep "^[^#]" "${dir}/.ackrc" | tr '\n' ' ')
@@ -64,21 +65,35 @@ while [ "$dir" != "/" -a "$match" = "" ]; do
             match=0
         fi
     else
-        dir=$(dirname "$dir")
+        dir=$(dirname "${dir}")
     fi
 done
 
 # Add quote-wrapping for any additional args to ensure proper passing to
 # real 'ack'.
-for arg in "$@"; do ackrc="${ackrc} '${arg}'"; done
+for arg in "$@"; do
+    if [ -z "${ackrc}" ]; then
+        ackrc="'${arg}'"
+    else
+        ackrc="${ackrc} '${arg}'"
+    fi
+done
 
-# Run the final command
-eval "${ack} ${ackrc}"
+# Build command to eval
+cmd="command ack ${ackrc}"
+if [ ! -t 0 ]; then
+    # If stdin is a pipe, use cat to redirect stdin to stdout and pipe
+    # that data into ack.
+    cmd="cat | ${cmd}"
+fi
+
+# Eval the final command
+eval "${cmd}"
 {% endcodeblock %}
 
-### Installation
+### Usage
 
-- Grab the [ack-wrapper](https://github.com/tonyduckles/dotfiles/blob/master/bin/ack-wrapper) script,
+- Grab the latest version of the [ack-wrapper](https://github.com/tonyduckles/dotfiles/blob/master/bin/ack-wrapper) script,
   drop it somewhere in your `$PATH` (*I like having a `~/bin/` directory*), and
   make sure it's executable (`chmod 755 path/to/ack-wrapper`).
 - Update your `.bashrc` to `alias ack=ack-wrapper`, so that running `ack ...`
