@@ -28,25 +28,39 @@ figured I'd write up what worked for me in case that helps other people.
 <!-- more -->
 
 ## Installation
-<ol>
-<li>Install the <code>openssh</code> package.</li>
-<li>Install the <code>heimdal</code> package, which supplies an implementation of the
-   Kerberos tools. This gets you things like <code>kinit</code>, <code>klist</code>, etc.</li>
-<li>You may want to configure your <code>/etc/krb5.conf</code> file to list a default realm
-   so that you don't need to specify it when doing the <code>kinit</code> later on:
-   {% codeblock /etc/krb5.conf lang:sh %}
-   [libdefaults]
-       default_realm = REALM_NAME
-   {% endcodeblock %}
-   Alternatively, rather than fiddling with <code>/etc/krb5.conf</code> on my Cygwin
-   install, I opted to use the <code>KRB5&#95;CONFIG</code> environment variable (see the
-   <code>kinit</code> manpage) to point to a <code>~/.krb5.conf</code> file instead to keep my
-   Kerberos config confined to my <code>$HOME</code> directory (since I <a href="/blog/2011/12/20/home-sweet-home">keep my $HOME directory under version control</a>).</li>
-<li>Modify your <code>~/.ssh/config</code> file to enable GSSAPI authentication:
-   {% codeblock ~/.ssh/config %}
-   GSSAPIAuthentication yes
-   {% endcodeblock %}</li>
-</ol>
+
+#### Step 1 - Install the "openssh" package
+
+Install the `openssh` package. This gets you the OpenSSH client tools, e.g. `ssh`,
+`ssh-agent`, etc.
+
+#### Step 2 - Install the "heimdal" package
+
+Install the `heimdal` package, which supplies an implementation of the Kerberos
+tools. This gets you things like `kinit`, `klist`, etc.
+
+#### Step 3 - (Optional) Configure your "krb5.conf" file
+You may want to configure your `/etc/krb5.conf` file to list a default realm
+so that you don't need to specify it when doing the `kinit` later on:
+
+{% codeblock /etc/krb5.conf lang:sh %}
+[libdefaults]
+  default_realm = REALM_NAME
+{% endcodeblock %}
+
+Alternatively, rather than fiddling with `/etc/krb5.conf` on my Cygwin
+install, I opted to use the `KRB5_CONFIG` environment variable (see the
+`kinit` manpage) to point to a `~/.krb5.conf` file instead to keep my
+Kerberos config confined to my `$HOME` directory (since I
+[keep my $HOME directory under version control](/blog/2011/12/20/home-sweet-home)).
+
+#### Step 4 - Modify your ".ssh/config" file
+
+Modify your `~/.ssh/config` file to enable GSSAPI authentication:
+
+{% codeblock ~/.ssh/config %}
+GSSAPIAuthentication yes
+{% endcodeblock %}
 
 ## Usage
 *  Before you `ssh` to a remote machine where you want to use Kerberized credentials,
