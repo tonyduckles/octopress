@@ -2,12 +2,10 @@
 // Add styles here to make changes without digging in too much
 
 body {
-  @media only screen and (min-width: 0px) {
-    font-size: 0.8em;
-    pre { font-size: 10px; }
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 0.9em;
+  font-size: 0.85em;
+  pre { font-size: 11px; }
+  @media only screen and (min-width: 480px) {
+    font-size: 0.92em;
     pre { font-size: 12px; }
   }
   @media only screen and (min-width: 992px) {
@@ -33,6 +31,7 @@ body {
       font-size: inherit;
       line-height: inherit;
       padding-left: 1.2em;
+      padding-right: 2em;
       color: #A4A4A4;
       p {
         margin-bottom: 1.2em;
