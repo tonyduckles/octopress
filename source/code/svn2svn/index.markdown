@@ -4,6 +4,7 @@ title: svn2svn
 comments: false
 sharing: true
 footer: true
+body_id: page
 ---
 
 Replicate (replay) changesets from one Subversion repository to another.

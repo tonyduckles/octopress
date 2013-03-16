@@ -1,7 +1,8 @@
 ---
 layout: page
-status: publish
 title: About
+footer: false
+body_id: page
 ---
 
 My name is **Tony Duckles**. I'm a software engineer living in Madison, WI.
