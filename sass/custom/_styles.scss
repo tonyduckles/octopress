@@ -1,17 +1,44 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-// Shrink (non-mobile) font-size a bit. The default of 1.15em seemed oversized to me.
-@media only screen and (min-width: 992px) {
-  body {
-    font-size: 1em;
+body {
+  @media only screen and (min-width: 0px) {
+    font-size: 0.8em;
+    pre { font-size: 10px; }
   }
-}
+  @media only screen and (min-width: 768px) {
+    font-size: 0.9em;
+    pre { font-size: 12px; }
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: 1em;
+    pre { font-size: 13px; }
+  }
 
-// Add drop-shadow to title
-body header hgroup {
-  h1 { text-shadow: #111 2px 2px 4px; }
-  h2 { text-shadow: #222 2px 2px 4px; }
+  // Add drop-shadow to title
+  header hgroup {
+    h1 { text-shadow: #111 2px 2px 4px; }
+    h2 { text-shadow: #222 2px 2px 4px; }
+  }
+
+  #content article {
+    line-height: 1.7em;
+
+    // Add some breathing room after list items
+    ul li { margin-bottom: .5em; }
+    ol li { margin-bottom: .5em; }
+
+    // Make blockquotes less space-y
+    blockquote {
+      font-size: inherit;
+      line-height: inherit;
+      padding-left: 1.2em;
+      color: #A4A4A4;
+      p {
+        margin-bottom: 1.2em;
+      }
+    }
+  }
 }
 
 aside.sidebar {
@@ -19,25 +46,6 @@ aside.sidebar {
     img {
       @include shadow-box($border: none, $shadow: none, $border-radius: none);
       padding: .12em;
-    }
-  }
-}
-
-body #content article {
-  line-height: 1.7em;
-
-  // Add some breathing room after list items
-  ul li { margin-bottom: .5em; }
-  ol li { margin-bottom: .5em; }
-
-  // Make blockquotes less space-y
-  blockquote {
-    font-size: inherit;
-    line-height: inherit;
-    padding-left: 1.2em;
-    color: #A4A4A4;
-    p {
-      margin-bottom: 1.2em;
     }
   }
 }
