@@ -22,9 +22,10 @@ body {
   #content article {
     line-height: 1.7em;
 
+    b { font-weight: bold; }
     // Add some breathing room after list items
-    ul li { margin-bottom: .5em; }
-    ol li { margin-bottom: .5em; }
+    ul li { margin-bottom: .1em; }
+    ol li { margin-bottom: .1em; }
 
     // Make blockquotes less space-y
     blockquote {
