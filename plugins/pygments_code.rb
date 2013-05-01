@@ -7,6 +7,7 @@ begin # Make it easy for folks to use rubypython if they like
   require 'rubypython'
 rescue LoadError # rubypython is not installed
 end
+require File.expand_path('../../lib/colors.rb', __FILE__)
 
 PYGMENTS_CACHE_DIR = File.expand_path('../../.pygments-cache', __FILE__)
 FileUtils.mkdir_p(PYGMENTS_CACHE_DIR)
@@ -15,11 +16,9 @@ module HighlightCode
   include TemplateWrapper
   include SiteConfig
   def pygments(code, lang)
-    highlighted_code = Pygments.highlight(code, :lexer => lang, :formatter => 'html', :options => {:encoding => 'utf-8'}) 
+    highlighted_code = Pygments.highlight(code, :lexer => lang, :formatter => 'html', :options => {:encoding => 'utf-8'})
     highlighted_code = highlighted_code.gsub(/{{/, '&#x7b;&#x7b;').gsub(/{%/, '&#x7b;&#x25;')
     highlighted_code.to_s
-  rescue 
-    puts $!,$@
   end
 
   def highlight(code, options = {})
@@ -115,7 +114,7 @@ module HighlightCode
   end
 
   def parse_markup (input)
-    lang      = input.match(/\s*lang:(\w+)/i)
+    lang      = input.match(/\s*lang:(\S+)/i)
     title     = input.match(/\s*title:\s*(("(.+?)")|('(.+?)')|(\S+))/i)
     linenos   = input.match(/\s*linenos:(\w+)/i)
     escape    = input.match(/\s*escape:(\w+)/i)
@@ -134,13 +133,13 @@ module HighlightCode
       url:          (url.nil? ? nil : url[3] || url[5] || url[6]),
       start:        (start.nil? ? nil : start[1].to_i),
       end:          (endline.nil? ? nil : endline[1].to_i),
-      link_text:    (link_text.nil? ? nil : link_text[3] || link_text[5] || link_text[6]) 
+      link_text:    (link_text.nil? ? nil : link_text[3] || link_text[5] || link_text[6])
     }
     opts.merge(parse_range(input, opts[:start], opts[:end]))
   end
 
   def clean_markup (input)
-    input.sub(/\s*lang:\s*\w+/i, ''
+    input.sub(/\s*lang:\s*\S+/i, ''
         ).sub(/\s*title:\s*(("(.+?)")|('(.+?)')|(\S+))/i, ''
         ).sub(/\s*url:\s*(\S+)/i, ''
         ).sub(/\s*link_text:\s*(("(.+?)")|('(.+?)')|(\S+))/i, ''
@@ -172,7 +171,7 @@ module HighlightCode
     end
     {start: start, end: endline}
   end
-  
+
   def get_range (code, start, endline)
     length    = code.lines.count
     start   ||= 1
@@ -183,6 +182,17 @@ module HighlightCode
       code = code.split(/\n/).slice(start - 1, endline + 1 - start).join("\n")
     end
     code
+  end
+
+  def highlight_failed(error, syntax, markup, code, file = nil)
+    code_snippet = code.split("\n")[0..9].map{|l| "    #{l}" }.join("\n")
+    fail_message  = "\nPygments Error while parsing the following markup#{" in #{file}" if file}:\n\n".red
+    fail_message += "    #{markup}\n#{code_snippet}\n"
+    fail_message += "#{"    ..." if code.split("\n").size > 10}\n"
+    fail_message += "\nValid Syntax:\n\n#{syntax}\n".yellow
+    fail_message += "\nPygments Error:\n\n#{error.message}".red
+    $stderr.puts fail_message.chomp
+    raise ArgumentError
   end
 
 end

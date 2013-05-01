@@ -17,7 +17,7 @@ module Jekyll
   class ContentFilters < PostFilter
     include OctopressFilters
     def pre_render(post)
-      if post.ext.match('html|textile|markdown|haml|slim|xml')
+      if post.ext.match('html|textile|markdown|md|haml|slim|xml')
         post.content = pre_filter(post.content, post.ext)
       end
     end
@@ -59,7 +59,7 @@ module OctopressLiquidFilters
   # Replaces relative urls with full urls
   def expand_urls(input, url='')
     url ||= '/'
-    input.gsub /(\s+(href|src)\s*=\s*["|']{1})(\/[^\"'>]*)/ do
+    input.gsub /(\s+(href|src)\s*=\s*["|']{1})(\/(?!\/)[^\"'>]*)/ do
       $1+url+$3
     end
   end
@@ -99,10 +99,7 @@ module OctopressLiquidFilters
 
   # Removes trailing forward slash from a string for easily appending url segments
   def strip_slash(input)
-    if input =~ /(.+)\/$|^\/$/
-      input = $1
-    end
-    input
+    input.sub(/\/\s*$/, '')
   end
 
   # Returns a url without the protocol (http://)
@@ -119,4 +116,3 @@ module OctopressLiquidFilters
 
 end
 Liquid::Template.register_filter OctopressLiquidFilters
-

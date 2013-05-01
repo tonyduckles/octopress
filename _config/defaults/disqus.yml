@@ -1,7 +1,0 @@
----
-# --------------------------------- #
-#   Disqus Comments Configuration   #
-# --------------------------------- #
-
-disqus_short_name:
-disqus_show_comment_count: false
